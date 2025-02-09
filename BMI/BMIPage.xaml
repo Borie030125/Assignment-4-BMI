@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BMI.BMIPage"
+    Title="BMI Calculator">
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="BMI Calculator" FontSize="24" HorizontalOptions="Center"/>
+
+        <HorizontalStackLayout Padding="10" Spacing="20" HorizontalOptions="FillAndExpand">
+            <!-- Male -->
+            <Frame x:Name="MaleFrame" 
+                 BorderColor="Transparent" 
+                 CornerRadius="10" 
+                 Padding="2" 
+                 HasShadow="False"
+                 HeightRequest="150"
+                 WidthRequest="150"
+                 HorizontalOptions="FillAndExpand">
+                <Image Source="Images/male.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnMaleTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+            <!-- Female -->
+            <Frame x:Name="FemaleFrame" 
+                 BorderColor="Transparent" 
+                 CornerRadius="10" 
+                 Padding="2" 
+                 HasShadow="False"
+                 HeightRequest="150"
+                 WidthRequest="150"
+                 HorizontalOptions="FillAndExpand">
+                <Image Source="Images/female.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnFemaleTapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Frame>
+        </HorizontalStackLayout>
+
+        <Label Text="Height (inches):" />
+        <Slider x:Name="HeightSlider" Minimum="20" Maximum="100" Value="50" ValueChanged="OnSliderValueChanged"/>
+        <Label x:Name="HeightLabel" Text="50 in" />
+
+        <Label Text="Weight (lbs):" />
+        <Slider x:Name="WeightSlider" Minimum="50" Maximum="300" Value="90" ValueChanged="OnSliderValueChanged"/>
+        <Label x:Name="WeightLabel" Text="90 lbs" />
+
+        <Button Text="Calculate your BMI" Clicked="CalculateBMI"/>
+    </VerticalStackLayout>
+</ContentPage>
