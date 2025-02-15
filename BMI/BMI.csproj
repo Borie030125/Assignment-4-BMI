@@ -73,7 +73,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="BMIPage.xaml">
+	  <Compile Update="HealthRecommendationPage.xaml.cs">
+	    <DependentUpon>HealthRecommendationPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="BMIInputPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="BMIResultPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="HealthRecommendationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

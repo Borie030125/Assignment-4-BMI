@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new BMIPage();
+            MainPage = new NavigationPage(new BMIInputPage());
         }
     }
 }
